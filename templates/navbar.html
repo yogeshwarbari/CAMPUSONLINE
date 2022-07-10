@@ -1,0 +1,50 @@
+<!-- {% load static %}
+<a href="/">
+	<img
+		src="{% static 'images/campus_online_logo.png' %}"
+		class="rounded-0"
+		alt="campus_online_logo"
+	/>
+</a>
+<form method="GET" action="{% url 'home' %}">
+	<input type="text" name="q" placeholder="Search Rooms" />
+</form>
+{% if request.user.is_authenticated %}
+<p>Hi, {{request.user}}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+<hr /> -->
+
+<nav class="navbar navbar-expand-sm bg-light p-0" >
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">
+			<img
+				src="{% static 'images/campus_online_logo.png' %}"
+				class="rounded-0"
+				alt="campus_online_logo"
+			/>
+		</a>
+		
+		<div class="collapse navbar-collapse mx-auto"  id="navbarSupportedContent">
+			
+			<form class="d-flex" role="search" method="GET" action="{% url 'home' %}">
+				<input
+					class="form-control me-2"
+					type="search"
+					name="q"
+					placeholder="Search Rooms"
+					aria-label="Search"
+				/>
+				<button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
+		</div>
+		{% if request.user.is_authenticated %}
+		<p class="fs-2 mx-5">{{request.user}}</p>
+		<a class="nav-link mx-3" href="{% url 'logout' %}">Logout</a>
+		{% else %}
+		<a class="nav-link mx-3" href="{% url 'login' %}">Login</a>
+		{% endif %}
+	</div>
+</nav>
