@@ -1,1 +1,1 @@
-web: gunicorn CAMPUSONLINE.wsgi --log-file - 
+web: gunicorn CAMPUSONLINE.wsgi
