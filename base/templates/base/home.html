@@ -6,17 +6,21 @@
 		margin: 10px 10px 10px 10px;
 	}
 </style>
-<div class="home-container">
-	<div>{% include 'base/topics_component.html' %}</div>
+<div class="row row-cols-3 p-0">
+	<div class="col-3 mx-2">{% include 'base/topics_component.html' %}</div>
 
-	<div>
-		<p>Study Room</p>
-		<h5>{{room_count}} rooms found.</h5>
-		<a href="{% url 'create-room' %}">Create Room</a>
+	<div class="col mx-2">
+		<div>
+			<div class="h3 d-flex justify-content-between">Rooms<a href="{% url 'create-room' %}" class="btn btn-secondary">Create Room</a></div>
+			<span class="fw-normal p-0 my-0"> {{room_count}} rooms found.</span>
+		</div>
+
 		{% include 'base/feed_component.html' %}
 	</div>
 
-	<div>{% include 'base/recent_activity_component.html' %}</div>
-    
+	<div class="col-3 mx-2">
+		{% include 'base/recent_activity_component.html' %}
+	</div>
 </div>
+
 {% endblock content %}
